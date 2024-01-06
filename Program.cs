@@ -44,8 +44,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.MapHub<UserHub>("/hubs/userHub");
-
-
+app.MapHub<AppHub>("/hubs/main");
 
 app.Run();

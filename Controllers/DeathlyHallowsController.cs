@@ -8,11 +8,11 @@ namespace SignalRSample.Controllers
     [Route("[controller]")]
     public class DeathlyHallowsController : ControllerBase
     {
-        private readonly IHubContext<UserHub, IUserHub> _userHub;
+        private readonly IHubContext<Hubs.AppHub, IAppHub> _appHub;
 
-        public DeathlyHallowsController(IHubContext<UserHub, IUserHub> userHub)
+        public DeathlyHallowsController(IHubContext<Hubs.AppHub, IAppHub> appHub)
         {
-            _userHub = userHub;
+            _appHub = appHub;
         }
 
         [HttpGet]
@@ -29,7 +29,7 @@ namespace SignalRSample.Controllers
             }
 
 
-            await _userHub.Clients.All
+            await _appHub.Clients.All
                 .UpdateDealthyHallowCount(SD.DealthyHallowRace);
 
             return Accepted();
