@@ -1,6 +1,6 @@
 ﻿//create Connection
 
-export default function ConfigureConnectionUserHub() {
+export default function ConfigureConnectionMainHub() {
 
     return new signalR.HubConnectionBuilder()
         //.configureLogging(signalR.LogLevel.Information)

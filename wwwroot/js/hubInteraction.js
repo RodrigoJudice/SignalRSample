@@ -1,13 +1,8 @@
 import UserViews from "./counters.js";
-import UpdateDealthyHallowCount from "./deathlyHallows.js"
-import ConfigureConnectionUserHub from "./connectionHub.js"
-import ManageHouse from "./manageHouses.js";
-
-const connetionUserHub = ConfigureConnectionUserHub();
+import ConfigureConnectionMainHub from "./connectionHub.js"
+const connetionUserHub = ConfigureConnectionMainHub();
 
 UserViews(connetionUserHub);
-UpdateDealthyHallowCount(connetionUserHub);
-ManageHouse(connetionUserHub);
 
 
 //invoke hub methods aka sent notification to hub with return and pass parameter

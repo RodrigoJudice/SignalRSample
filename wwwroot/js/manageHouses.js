@@ -1,4 +1,6 @@
-export default function ManageHouse(connetionUserHub) {
+import ConfigureConnectionMainHub from "./connectionHub.js"
+
+const connetionUserHub = ConfigureConnectionMainHub();
 
     function ShowToast(msg, timeout = 1000) {
         liveToastMessage.innerText = msg;
@@ -132,4 +134,12 @@ export default function ManageHouse(connetionUserHub) {
         ShowToast(`A new notification for ${houseName} has been launched`);
     });
    
-}
+///start connection
+connetionUserHub.start()
+    .then(() => {
+        console.log("connected to user count hub");
+
+    })
+    .catch((err) => {
+        return console.error(err.toString());
+    });

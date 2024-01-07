@@ -1,7 +1,7 @@
 
-import ConfigureConnectionUserHub from "./connectionHub.js"
+import ConfigureConnectionMainHub from "./connectionHub.js"
 
-const connetionUserHub = ConfigureConnectionUserHub();
+const connetionUserHub = ConfigureConnectionMainHub();
 let sendButton = document.getElementById("sendButton");
 let notificationInput = document.getElementById("notificationInput");
 let messageList = document.getElementById("messageList")
