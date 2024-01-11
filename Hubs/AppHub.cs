@@ -29,7 +29,9 @@ namespace SignalRSample.Hubs
         Task SubscriptionStatus(string GroupsJoined, string houseName, bool HasSubscribed);
         Task InfomartionMembersToHouse(string houseName, bool HasSubscribed);
         Task TriggerHouseNotification(string houseName);
-        Task ReceiveMessage(string Message, int messagesCounter);
-        Task LoadMessages(List<string> Messages, int messagesCounter);
+        Task ReceiveNotification(string Message, int messagesCounter);
+        Task LoadNotifications(List<string> Messages, int messagesCounter);
+        Task MessageReceived(string User, string Message);
+
     }
 }

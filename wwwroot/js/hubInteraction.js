@@ -1,5 +1,6 @@
 import UserViews from "./counters.js";
 import ConfigureConnectionMainHub from "./connectionHub.js"
+
 const connetionUserHub = ConfigureConnectionMainHub();
 
 UserViews(connetionUserHub);
@@ -24,9 +25,3 @@ connetionUserHub.start()
     .catch((err) => {
         return console.error(err.toString());
     });
-
-
-//invoke hub methods aka sent notification to hub not return
-//function NewWindowLoadedOnClient() {
-//    //connetionUserCount.send("NewWindowLoaded");
-//}

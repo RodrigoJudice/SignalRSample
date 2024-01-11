@@ -8,12 +8,12 @@ let messageList = document.getElementById("messageList")
 let notificationCounter = document.getElementById("notificationCounter")
 
 sendButton.addEventListener("click", function (event) {
-    connetionUserHub.invoke("SendMessage", notificationInput.value);
+    connetionUserHub.invoke("SendNotification", notificationInput.value);
     notificationInput.value = "";
     event.preventDefault();
 });
 
-connetionUserHub.on("ReceiveMessage", function (message, messagesCounter) {
+connetionUserHub.on("ReceiveNotification", function (message, messagesCounter) {
 
     notificationCounter.innerText = messagesCounter;
     let li = document.createElement("li");
@@ -24,7 +24,7 @@ connetionUserHub.on("ReceiveMessage", function (message, messagesCounter) {
     
 });
 
-connetionUserHub.on("LoadMessages", function (messages, messagesCounter) {
+connetionUserHub.on("LoadNotifications", function (messages, messagesCounter) {
 
     notificationCounter.innerText = messagesCounter
     messages.map((message) => {
@@ -37,7 +37,7 @@ connetionUserHub.on("LoadMessages", function (messages, messagesCounter) {
 
 
 async function NewWindowLoadedMessages() {
-    const result = await connetionUserHub.invoke("LoadMessages");
+    const result = await connetionUserHub.invoke("LoadNotifications");
     try {
         console.log(result);
     } catch (err) {
